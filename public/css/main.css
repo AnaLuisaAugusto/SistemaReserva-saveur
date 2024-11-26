@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans+Narrow:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    /* cores */
+        --color-1: #6C3D29;
+        --color-10: #5F2308;
+        --color-2: #83543F;
+        --color-3: #AE7156;
+        --color-4: #CA996A;
+        --color-5: #BF5454;
+        --color-11: #4CBA88;
+        --color-6: #6F96C7;
+        --color-7: #F1C247;
+        --color-8: #D9D9D9;
+        --color-9: #1E1E1E;
+        --color-base: #EFEFEF;
+        --color-12: #797979;
+
+
+    /* fontes */
+        --outfit: "Outfit", sans-serif;
+        --PT-Sans-Narrow: "PT Sans Narrow", sans-serif;
+}
+
+
+*{
+    /*size*/
+        box-sizing: border-box;
+        margin: 0;
+        border: 0;
+
+    /*text*/
+        font-size: 1rem;
+}
+
+body{
+    /*background*/
+        background-color: var(--color-base);
+}
+
+/* container */
+    .container{
+        margin-top: 7vh;
+        margin-bottom: 5vh;
+    }
+
+/* titulo */
+    h3{
+        font-size: 1.6em;
+        font-family: var(--outfit);
+        color: var(--color-10);
+    }
+
+/* button */
+    .btn-black{
+        background-color: var(--color-9);
+        padding: 1.7vh 7vw;
+        border-radius: 2vh;
+    }
+
+    .btn-black:hover{
+        background-color: #000;
+        box-shadow: 0 0 1vh 0.5vh rgba(0, 0, 0, 0.1); 
+        font-weight: 500;   
+    }
+
+/* input */
+    .input{
+        border-radius: 1.5vh;
+        border: 0.2vw solid var(--color-2);
+        box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.1);
+    }
+
+    .form-control:focus {
+        border-color: var(--color-3); 
+        box-shadow: 0 0 0 0.2rem rgba(136, 48, 21, 0.25); 
+        border-width: 0.2rem;
+        outline: none; 
+    }
+
+    .span-required{
+        font-size: 2.2vh;
+        margin: 1vh 0 0 0.2vw;
+        font-weight: 500;
+        color: var(--color-5);
+        display: none;
+    }
+    
+/* navbar */
+    .navbar{
+        background-color: var(--color-1);
+        box-shadow: 0 1vh 1vh rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-toggler{
+        display: none;
+    }
+
+    .nav-link, .navbar-brand{
+        color: var(--color-base);
+    }
+
+    .nav-link:hover{
+        color: white;
+        font-size: 1.2vw;
+        font-weight: 500;
+    }
+
+    .icon-coffee{
+        width: 1.8rem;
+        margin: 0 1rem;
+        color: var(--color-base);
+    }
+
+    /* função perfil */
+
+        .icon-perfil{
+            display: block;
+            font-size: 2rem;
+            color: var(--color-base);
+        }
+        
+        /* Dropdown */
+        .dropbtn {
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* Container do dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Estilo para o conteúdo do dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;  
+            right: 10%;  
+            background-color: #f1f1f1;
+            min-width: 11vw;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        /* Estilo dos itens do dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Altera a cor dos itens quando o mouse passa por cima */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Exibe o dropdown quando o botão é "hovered" */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+
+@media screen and (orientation: portrait)
+{
+    /* navbar */
+        .icon-perfil{
+            display: none;
+        }
+
+        .navbar{
+            margin: 0;
+        }
+
+        .navbar-toggler{
+            display: block;
+            margin-right: -18vw;
+        }
+
+    /* button */
+        .btn-black{
+            padding: 1.5vh 22vw;
+            border-radius: 20vh;
+        }
+}

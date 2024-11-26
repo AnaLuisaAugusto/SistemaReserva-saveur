@@ -1,0 +1,32 @@
+/* formulario */
+    .row-forms{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .div-forms{
+        background-color: #ebebeb;
+        border-radius: 5vh;
+        border: 0.4vh solid var(--color-1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
+        padding: 2vw 8vw;
+        width: 60%;        
+    }
+
+    
+@media screen and (orientation: portrait)
+{
+
+    .container{
+        margin: 0;
+        padding: 3vh 2vh;
+    }
+
+    .div-forms{
+        width: 100%!important;
+        border-radius: 2vh;
+    }
+
+}

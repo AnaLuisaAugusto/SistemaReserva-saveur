@@ -1,0 +1,70 @@
+/* Flexbox para alinhar as colunas */
+.row {
+    display: flex;               /* Flexbox para as colunas se adaptarem */
+    justify-content: center;     /* Centraliza as colunas horizontalmente */
+    width: 100%; 
+    align-items: stretch!important; 
+    margin: 0 auto;
+}
+
+/* Colunas */
+.col-img, .col-forms {
+    flex: 1!important;                     /* Cada coluna ocupará o mesmo espaço disponível */
+    padding: 2vh;                /* Padding para as colunas */
+    box-sizing: border-box;      /* Garante que o padding não afete o tamanho final da coluna */
+    min-width: 300px;            /* Evita que a coluna fique muito estreita em telas menores */
+    display: flex;               /* Flexbox para os itens dentro da coluna */
+    flex-direction: column;      /* Alinha o conteúdo verticalmente */
+    justify-content: flex-start;
+    height: max-content;
+}
+
+/* Estilos para a coluna de formulário */
+.col-forms {
+    background-color: var(--color-8);
+    border-radius: 0 2vh 2vh 0;
+    border-left: 0.2vw solid var(--color-1);
+}
+
+/* Formulário */
+.forms {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 500px;            /* Limita a largura máxima do formulário */
+    margin: 0 auto;              /* Centraliza o formulário dentro da coluna */
+}
+
+/* Ajuste do título */
+.titulo {
+    font-family: var(--PT-Sans-Narrow);
+    font-size: 2rem;
+}
+
+/* Ajustes de espaçamento nos textos */
+.text {
+    padding: 1.2vh;
+}
+
+/* Responsividade: ajusta a disposição das colunas em telas menores */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;  /* As colunas empilham em telas pequenas */
+        align-items: center;     /* Centraliza as colunas na tela */
+    }
+
+    .col-img, .col-forms {
+        max-width: 100%;         /* Garante que as colunas ocupem toda a largura */
+        min-width: 100%;         /* Aumenta o mínimo para não quebrar o layout */
+    }
+
+    .forms {
+        max-width: 100%;         /* O formulário ocupa toda a largura disponível */
+        padding: 0 2vw;          /* Adiciona padding nas laterais em telas pequenas */
+    }
+
+    .img-login {
+        height: auto;            /* Deixa a altura da imagem flexível */
+    }
+}

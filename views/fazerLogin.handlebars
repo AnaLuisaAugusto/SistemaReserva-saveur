@@ -1,0 +1,53 @@
+<!-- link css -->
+<link rel="stylesheet" href="/css/conta.css">
+
+<!-- título da página -->
+<title>Fazer Login</title>
+
+<!-- container -->
+<div class="container">
+    <div class="text-center">
+        <div class="row align-items-start">
+            <!-- parte esquerda - IMAGEM -->
+            <div class="col col-img">
+                <img src="/img/cafeteria2.jpg" class="img-fluid img-login" alt="Imagem Cafeteria">
+            </div>
+
+            <!-- parte direita - FORMS -->
+            <div class="col col-forms">
+                <div class="text text-start">
+                    <h1 class="titulo">Bem-vindo de volta!</h1>
+                    <p>Preencha seus dados para acessar sua conta e aproveitar todas as funcionalidades.
+                    Ainda não tem uma conta? <a href="/criarConta">Criar Conta</a></p>
+                    <!-- Mensagem de erro -->
+                    {{#if error}}
+                        <div class="alert alert-danger" role="alert">
+                            {{error}}
+                        </div>
+                    {{/if}}
+                </div>
+                
+                <form class="forms" id="form-cadastrar" method="POST" action="/fazerLogin">
+                    <div class="px-5">
+                        <!-- campo email -->
+                        <div class="text-start mt-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control input" id="email" name="email" required>
+                        </div>
+
+                        <!-- campo senha -->
+                        <div class="text-start mt-3 mb-5">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control input" id="senha" name="senha" required>
+                        </div>
+                    </div>
+
+                    <!-- button login -->               
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn text-center btn-primary btn-black btn-cadastrar">Entrar</button>
+                    </div>                        
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

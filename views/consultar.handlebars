@@ -1,0 +1,75 @@
+<!-- link css -->
+<link rel="stylesheet" href="/css/consultar.css">
+
+<!-- título da página -->
+<title>Consultar Reserva</title>
+
+<!-- container -->
+<div class="container">
+    <div class="row px-4 py-3 text-center">
+        <h3>Consultar Reserva</h3>
+
+        <!-- Parte: pesquisar -->
+        <div class="input-group mb-5 mt-4 input-search">
+            <input type="text" id="searchInput" class="form-control" placeholder="Pesquisar por ID ou nome" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary btn-buscar" type="button" onclick="searchReservations()">Buscar</button>
+        </div>
+
+        <!-- Tabela -->
+        <div class="table-responsive">
+            <table class="table table-striped p-0">
+                <thead>
+                    <!-- Títulos -->
+                    <tr class="header-table">
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Data e Hora</th>
+                        <th scope="col">Qtde. de Pessoas</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="reservationsTableBody">
+                    {{#each reservas}}
+                        <tr class="reservation-row">
+                            <td>{{increment @index}}</td> <!-- Usa o helper para exibir o índice + 1 -->
+                            <td>{{nome}}</td>
+                            <td>{{cpf}}</td>
+                            <td>{{data}} / {{hora}}</td>
+                            <td>{{qtd_pessoas}}</td>
+                            <td>{{status}}</td>
+                            <td>
+                                <form action="/removerReserva/{{id}}" method="POST" style="display:inline;">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-danger">Remover</button>
+                                    <a href="/alterarReserva/{{id}}" class="btn btn-primary">Editar</a>
+                                </form>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Script para Busca -->
+<script>
+    function searchReservations() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const rows = document.querySelectorAll('.reservation-row');
+
+        rows.forEach(row => {
+            const id = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+            const nome = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+
+            // Verifica se o ID ou Nome contém o termo de busca
+            if (id.includes(searchTerm) || nome.includes(searchTerm)) {
+                row.style.display = ''; // Mostrar linha
+            } else {
+                row.style.display = 'none'; // Ocultar linha
+            }
+        });
+    }
+</script>

@@ -1,0 +1,109 @@
+/* button criar reserva */
+    .btn-criarReserva{
+        color: var(--color-base);
+        background-color: var(--color-9);
+    }
+
+    .btn-criarReserva:hover{
+        font-weight: 500;
+        color:  var(--color-base);
+        background-color: var(--color-9);
+    }
+
+/* parte: pesquisar */
+    .input-search{
+        padding: 0 30%;
+    }
+
+    .btn-buscar{
+        background-color: var(--color-9);
+        color: var(--color-base);
+        border-color: black;
+    }
+
+    .btn-buscar:hover{
+        background-color: black;   
+        font-weight: 500;
+        color: rgb(228, 228, 228);
+    }
+
+    .btn-buscar:focus{
+        background-color: var(--color-9);        
+        box-shadow: 0 0 0 0.2rem rgba(90, 36, 15, 0.568);
+    }
+
+/* tabela */
+    .header-table th{
+        background-color: var(--color-4)!important;
+        border: none!important;
+    }
+
+    .table {
+        border: 0.4vh solid var(--color-3)!important; 
+    }
+
+    .table th, .table td {
+        border: 1px solid rgba(92, 92, 92, 0.24); 
+    }
+
+    .table td {
+        vertical-align: middle;
+    }
+    
+    .table td .row {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        margin: 0; 
+    }
+
+    /* círculo status */
+        .circles{
+            width: 2vw;
+            height: 2vw;
+            border-radius: 50vh;
+        }
+
+        .circle-green{
+            background-color: var(--color-11);
+        }
+
+        .circle-red{
+            background-color: var(--color-5);
+        }
+
+        .circle-yellow{
+            background-color: var(--color-7);
+        }
+
+        .circle-gray{
+            background-color: var(--color-12);
+        }
+
+        /* Definir o tamanho fixo do círculo */
+        .status-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        .ativo {
+            background-color: green;
+        }
+
+        .cancelado {
+            background-color: red;
+        }
+
+        .status-circle.ativo, .status-circle.cancelado {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }   
+
+@media screen and (orientation: portrait)
+{       
+   
+}
